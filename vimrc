@@ -54,6 +54,7 @@ set mouse=v
 set showcmd
 set showmode
 set number
+set relativenumber
 set wrap linebreak nolist
 set linespace=4
 set visualbell t_vb=
