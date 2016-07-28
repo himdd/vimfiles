@@ -7,33 +7,34 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'vimcn/vimcdoc'
-Plugin 'mileszs/ack.vim' 
-Plugin 'scrooloose/nerdtree'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
-Plugin 'taglist.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'majutsushi/tagbar'
+"Plugin 'vimcn/vimcdoc'
+"Plugin 'mileszs/ack.vim' 
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'ervandew/supertab'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'taglist.vim'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'altercation/vim-colors-solarized'
 
-Plugin 'tpope/vim-rails'
-Plugin 'nvie/vim-flake8'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'Rip-Rip/clang_complete'
-
-" sytle
-Plugin 'saltstack/salt-vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'hallison/vim-markdown'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'groenewege/vim-less'
-
-" JS
-Plugin 'maksimr/vim-jsbeautify'
-
-" snipmate
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'tpope/vim-rails'
+"Plugin 'nvie/vim-flake8'
+"Plugin 'hynek/vim-python-pep8-indent'
+"Plugin 'Rip-Rip/clang_complete'
+"
+"" sytle
+"Plugin 'saltstack/salt-vim'
+"Plugin 'cakebaker/scss-syntax.vim'
+"Plugin 'hallison/vim-markdown'
+"Plugin 'kchmck/vim-coffee-script'
+"Plugin 'groenewege/vim-less'
+"
+"" JS
+"Plugin 'maksimr/vim-jsbeautify'
+"
+"" snipmate
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on
@@ -98,9 +99,9 @@ let g:ragtag_global_maps = 1
 set statusline=%f       "tail of the filename
 
 "语法检查
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
