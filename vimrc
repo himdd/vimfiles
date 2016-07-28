@@ -106,8 +106,11 @@ set fileencodings=utf-8,gb2312,gbk,gb18030,default,latinl
 set fileformats=unix,dos
 
 "NERDTree
-autocmd vimenter * NERDTree
+"启动vim自动打开NERDTree
+autocmd VimEnter * NERDTree
 
+"打开新的buffer时自动定位到编辑窗口
+autocmd VimEnter * wincmd p
 "taglist.vim
 
 "let NERDTreeIgnore = ['\.pyc$']
