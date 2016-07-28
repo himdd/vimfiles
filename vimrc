@@ -7,13 +7,13 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 "Plugin 'vimcn/vimcdoc'
 "Plugin 'mileszs/ack.vim' 
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'ervandew/supertab'
 "Plugin 'scrooloose/syntastic'
-"Plugin 'taglist.vim'
+Plugin 'taglist.vim'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'altercation/vim-colors-solarized'
 
@@ -87,10 +87,6 @@ else
     let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 endif
 
-"ctag
-if executable("/usr/local/bin/ctags")
-    let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
-endif
 
 "ragtag 快速输入eruby 标签
 let g:ragtag_global_maps = 1 
@@ -110,10 +106,28 @@ set fileencodings=utf-8,gb2312,gbk,gb18030,default,latinl
 set fileformats=unix,dos
 
 "taglist.vim
-let Tlist_Show_One_File=1
-let Tlist_Use_Right_Window=1
 
-let NERDTreeIgnore = ['\.pyc$']
+"let NERDTreeIgnore = ['\.pyc$']
+
+" 这项必须设定，否则出错,配置taglist的ctags路径
+"let Tlist_Ctags_Cmd = 'D:\ctags58\ctags.exe'
+if executable("/usr/local/bin/ctags")
+    let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+endif
+" 不同时显示多个文件的 tag ，只显示当前文件的
+let Tlist_Show_One_File=1
+" 如果 taglist 窗口是最后一个窗口，则退出 vim
+let Tlist_Exit_OnlyWindow=1
+"让当前不被编辑的文件的方法列表自动折叠起来 
+let Tlist_File_Fold_Auto_Close=1
+"把taglist窗口放在屏幕的右侧，缺省在左侧 
+let Tlist_Use_Right_Window=1 
+
+"显示taglist菜单
+let Tlist_Show_Menu=1
+
+"启动vim自动打开taglist
+let Tlist_Auto_Open=1
 
 "ctrlp.vim
 let g:ctrlp_custom_ignore = {
