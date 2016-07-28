@@ -12,7 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'mileszs/ack.vim' 
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'taglist.vim'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'altercation/vim-colors-solarized'
@@ -95,11 +95,16 @@ let g:ragtag_global_maps = 1
 set statusline=%f       "tail of the filename
 
 "语法检查
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
+"设置为每次打开buffer就执行语法检查，而不只是在保存时：
+let g:syntastic_check_on_open = 1
+"如果想使用多个检查器，可以这样写：
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_cpp_checkers = ['gcc']
 
 "http://www.nonozone.net/solve-vim-chinese-garbled.html
 set fileencodings=utf-8,gb2312,gbk,gb18030,default,latinl
