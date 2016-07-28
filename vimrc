@@ -11,7 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'vimcn/vimcdoc'
 "Plugin 'mileszs/ack.vim' 
 Plugin 'scrooloose/nerdtree'
-"Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 "Plugin 'scrooloose/syntastic'
 Plugin 'taglist.vim'
 "Plugin 'kien/ctrlp.vim'
@@ -114,7 +114,6 @@ autocmd VimEnter * wincmd p
 "taglist.vim
 
 "let NERDTreeIgnore = ['\.pyc$']
-
 " 这项必须设定，否则出错,配置taglist的ctags路径
 "let Tlist_Ctags_Cmd = 'D:\ctags58\ctags.exe'
 if executable("/usr/local/bin/ctags")
@@ -155,7 +154,7 @@ map <F9> :set paste!<cr>:set paste?<cr>
 "open current to new tab
 map <Leader>t :tabnew %<CR>
 
-nnoremap <F12> :nohlsearch<CR> 
+"nnoremap <F12> :nohlsearch<CR> 
 
 "key mapping for window navigation 映射窗口切换快捷键
 map <C-h> <C-w>h
@@ -166,6 +165,8 @@ map <C-l> <C-w>l
 "key mapping for saving file 映射C-S快速保存文件
 nmap <C-s> :w<CR>
 
+"ctags快捷命令
+map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " maksimr/vim-jsbeautify
 autocmd FileType javascript noremap <buffer>  <Leader>f :call JsBeautify()<cr>
 " for html
