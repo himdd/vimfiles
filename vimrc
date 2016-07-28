@@ -77,8 +77,8 @@ set hlsearch
 set incsearch
 
 "key mapping for tab navigation 快捷TAB导航
-"nmap <Tab> gt
-"nmap <S-Tab> gT
+nmap <Tab> gt
+nmap <S-Tab> gT
 
 "Ack 搜索插件设置
 if executable("ack")
@@ -105,6 +105,9 @@ let g:syntastic_enable_signs=1
 set fileencodings=utf-8,gb2312,gbk,gb18030,default,latinl
 set fileformats=unix,dos
 
+"NERDTree
+autocmd vimenter * NERDTree
+
 "taglist.vim
 
 "let NERDTreeIgnore = ['\.pyc$']
@@ -119,7 +122,7 @@ let Tlist_Show_One_File=1
 " 如果 taglist 窗口是最后一个窗口，则退出 vim
 let Tlist_Exit_OnlyWindow=1
 "让当前不被编辑的文件的方法列表自动折叠起来 
-let Tlist_File_Fold_Auto_Close=1
+"let Tlist_File_Fold_Auto_Close=1
 "把taglist窗口放在屏幕的右侧，缺省在左侧 
 let Tlist_Use_Right_Window=1 
 
