@@ -1,4 +1,8 @@
 set nocompatible
+set nobackup       " no backup files
+set noswapfile     " no swap files
+set nowritebackup  " only in case you don't want a backup file while editing
+set noundofile     " no undo files
 
 "vundle
 filetype off
@@ -12,14 +16,14 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'mileszs/ack.vim' 
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
-Plugin 'taglist.vim'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'taglist.vim'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'altercation/vim-colors-solarized'
 
 "Plugin 'tpope/vim-rails'
 "Plugin 'nvie/vim-flake8'
-"Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'hynek/vim-python-pep8-indent'
 "Plugin 'Rip-Rip/clang_complete'
 "
 "" sytle
@@ -54,7 +58,7 @@ set mouse=v
 set showcmd
 set showmode
 set number
-set relativenumber
+"set relativenumber
 set wrap linebreak nolist
 set linespace=4
 set visualbell t_vb=
@@ -96,9 +100,9 @@ let g:ragtag_global_maps = 1
 set statusline=%f       "tail of the filename
 
 "语法检查
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 "设置为每次打开buffer就执行语法检查，而不只是在保存时：
@@ -113,13 +117,13 @@ set fileformats=unix,dos
 
 "NERDTree
 "启动vim自动打开NERDTree
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 "打开新的buffer时自动定位到编辑窗口
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * wincmd p
 "taglist.vim
 
-"let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$']
 " 这项必须设定，否则出错,配置taglist的ctags路径
 "let Tlist_Ctags_Cmd = 'D:\ctags58\ctags.exe'
 if executable("/usr/local/bin/ctags")
@@ -138,7 +142,7 @@ let Tlist_Use_Right_Window=1
 let Tlist_Show_Menu=1
 
 "启动vim自动打开taglist
-let Tlist_Auto_Open=1
+"let Tlist_Auto_Open=1
 
 "ctrlp.vim
 let g:ctrlp_custom_ignore = {
@@ -148,9 +152,9 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+"let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " HOTKEY
 
